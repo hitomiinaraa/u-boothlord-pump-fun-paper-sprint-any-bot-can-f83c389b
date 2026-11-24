@@ -9,6 +9,8 @@
 // harness state, so two runs produce byte-identical action logs.
 //
 // Money rules (capital is 10 SOL, at most 5 open positions):
+// Revision note: the flat size stays flat even when a coin looks hot,
+// because one hot coin must never be allowed to eat the whole book.
 //   - one flat 0.20 SOL buy per coin, clipped by the harness per-mint cap
 //     (1% of real SOL reserves) and skipped when the clip leaves < 0.02 SOL
 //   - at least 20 distinct coins must round-trip >= 0.01 SOL, so entries
